@@ -17,6 +17,6 @@ Run web application index page
 Index Webpage
 ![Alt text](/doc/indexpage.PNG?raw=true "Index Webpage")
 ---
-Auto Correction
+Trait WebPage
 ![Alt text](/doc/socialTraitPrediction.PNG?raw=true "Social Trait page")
 ---
