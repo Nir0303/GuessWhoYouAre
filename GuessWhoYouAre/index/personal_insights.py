@@ -37,7 +37,7 @@ def traits():
     df=pd.DataFrame(d)
     p = Bar(df, 'sTraits', values='percentile', title="Social Traits", plot_width=1200, plot_height=800)
     output_file('index/templates/index/traits.html')
-    show(p)
+
 
 
 

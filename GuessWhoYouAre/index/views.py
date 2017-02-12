@@ -15,8 +15,10 @@ def index(request):
 
 def trait(request):
     if(True):
+        print request.POST
+        #return HttpResponse("test")
         userAttributes =request.POST
-        print userAttributes
+        print userAttributes['qname'],userAttributes['twtname'],userAttributes['fbname']
         quoraContent = all_code.getQuoraAttributes(userAttributes['qname'])
         twitterContent = ' '.join(all_code.getTwitterAttributes(userAttributes['twtname']))
         fbContent=all_code.getFaceBookAttribute(userAttributes['fbname'])

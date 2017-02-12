@@ -32,7 +32,10 @@ def getTwitterAttributes(userName):
 	
 
 
-TwitterContent=' '.join(getTwitterAttributes("purijagan"))
+TwitterContent=' '.join(getTwitterAttributes("J_tsar"))
 
-print TwitterContent
+allContent=quoraContent+TwitterContent
+
+with open('../output/profile.txt','w') as content:
+	content.write(allContent)
 

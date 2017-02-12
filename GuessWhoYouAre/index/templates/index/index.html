@@ -1,29 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <style>
-table{
-    border: 0.5px solid black;
-	width:100%;
-}
-tr{
-height: 300px;
-}
-td{
-text-align:center;
-}
-</style>
+{% load staticfiles %}
+<!--lang="en"-->
+<head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>GuessWhoYouAre</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="CustomStyles.css" rel="stylesheet"/>
+    <title>Landing Page - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/landing-page.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'font-awesome/css/font-awesome.min.css' %"} rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via  -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 	
-    <!-- Latest compiled and minified CSS -->
+	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!-- Optional theme -->
@@ -31,40 +35,67 @@ text-align:center;
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    	 
-    <div class="container">
-		 <div class="column">
-		     <div class ="col-md-12">
-			      <table>
-		<tr>
-			<td style="background-color:orange;" > GUESS WHO YOU ARE? </td> 
- 	 	</tr >
-		</table>
-			 </div>
-			 
-		 </div>
-	
 
-	
+</head>
 
-	<form action="{% url 'index:trait' %}" method="post">
-	{% csrf_token %}
-	Facebook
-	<input type="text" name="fbname" value="Facebook User Name"><br>
-	Twitter
-	<input type="text" name="twtname" value="Twitter User Name"><br>
-	Quora
-	<input type="text" name="qname" value="Quora User Name"><br>
-	<input type="submit" value="Submit">
-	</form>
+<body>
 
-	
+<a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+           
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Guess Who you are!!?</h1>
+                        <h3>Behaviour Identification</h3>
+                        <hr class="intro-divider">
+						</div>
+						</div>
+						</div>
+						<div class="col-lg-12">
+						<form action="{% url 'index:trait' %}" method="post">
+						{% csrf_token %}
+                        <ul class="list-inline intro-social-buttons">
+						
+                         <div class="row" align="top">
+						    <li>
+                                
+<a class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name"><input type="text" placeholder="Twitter UserName" name="twtname" ><br></span></a> 
+
+								
+                            </li></div>
+							<div class="row">
+                            <li>
+                                
+<a class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name"><input type="text" placeholder="FaceBook UserName" name="fbname" ><br></span></a> 
+
+								                            </li></div>
+                            <li>
+							
+<a  class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name"><input type="text" placeholder="Quora UserName" name="qname" ><br></span></a> 
+
+                                                            </li>
+                        </ul>
+						<div class="row">
+<a class="btn btn-default btn-lg"><input type="submit" value="Analyze"></a>
+						</div>
+</form>                    
+                
+            
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    
+<!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}" ></script>
+
+</body>
+
 </html>
