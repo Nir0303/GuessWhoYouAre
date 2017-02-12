@@ -10,7 +10,7 @@ personality_insights = PersonalityInsightsV3(
 	
 	)
 
-with open(join(dirname(__file__), 'profile.txt')) as \
+with open(join(dirname(__file__), '../output/profile.txt')) as \
         personality_text:
     print(json.dumps(personality_insights.profile(
         text=personality_text.read()), indent=2))

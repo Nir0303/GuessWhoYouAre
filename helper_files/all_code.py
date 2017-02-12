@@ -11,14 +11,12 @@ def getQuoraAttributes():
 	for i in quoraInterests:
 		s+=i['title']+"\n"
 	return s
+quoraContent=getQuoraAttributes()
 
 
-s=getQuoraAttributes()
-print s
 
 
 ##get twiter content
-
 def getTwitterAttributes(userName):
 	consumer_key = "8GUHQb0KiGZUzJLrVgBxPXwNI"
 	consumer_secret = "ZykaLwtwGP0c4JrzlTC9L5iEpaApL0ze9mB7t9mdeSiNa3cTMY"
@@ -28,9 +26,13 @@ def getTwitterAttributes(userName):
 	auth.set_access_token(access_key, access_secret)
 	api = tweepy.API(auth)
 	new_tweets = api.user_timeline(screen_name = userName,count=20)
-	outtweets = [[tweet.text.encode("utf-8")] for tweet in new_tweets]
+	outtweets = [tweet.text.encode("utf-8") for tweet in new_tweets]
 	return outtweets
 
 	
-s=getTwitterAttributes("J_tsar")
-print s
+
+
+TwitterContent=' '.join(getTwitterAttributes("purijagan"))
+
+print TwitterContent
+

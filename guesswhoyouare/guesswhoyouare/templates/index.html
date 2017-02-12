@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% load myfilters %}
+{% block extend %}<!-- Extra meta data or head content here -->{% endblock %}
+{% block title %}Home {% endblock %}
+{% block content %}
+    <h1>Welcome to my small corner of the web</h1>
+    <hr/>
+    <blockquote>
+        {% with quote=""|getrandomquote %}
+        <p>
+            {{quote.0}}<br>
+        </p>
+        <small>
+            <cite>{{quote.1}}</cite>
+        </small>
+        {% endwith %}
+    </blockquote>
+    <hr/>
+    <h3>Recent projects</h3>
+    <br/>
+    {% include "project_list.html" %}
+{% endblock %}
