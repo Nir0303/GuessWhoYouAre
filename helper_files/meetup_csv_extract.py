@@ -16,7 +16,6 @@ UTF8Writer = codecs.getwriter('utf8')
 sys.stdout = UTF8Writer(sys.stdout)
 
 def main():
-
         cities =[("Bridgeport","CT"),("New Haven","CT"),("Hartford","CT"),("Stamford","CT"),("Waterbury","CT")]
         api_key= "4f615459226e160461f4e3b5d451a31"
         # Get your key here https://secure.meetup.com/meetup_api/key/
@@ -34,18 +33,16 @@ def main():
                     category = ""
                     if "category" in group:
                         category = group['category']['name']
-                    print "," .join(map(unicode, [city, group['name'].replace(","," "), group['created'], group['city'],group.get('state',""),category,group['members'], group.get('who',"").replace(","," ")]))
+                    print("," .join(map(unicode, [city, group['name'].replace(","," "), group['created'], group['city'],group.get('state',""),category,group['members'], group.get('who',"").replace(","," ")])))
 
             time.sleep(1)
 
 
 def get_results(params):
-
-        request = requests.get("http://api.meetup.com/2/groups",params=params)
-        data = request.json()
-	
-	return data
+    request = requests.get("http://api.meetup.com/2/groups",params=params)
+    data = request.json()
+    return data
 
 
 if __name__=="__main__":
-        main()
+    main()
