@@ -1,7 +1,7 @@
 import json
 from os.path import join, dirname
 from watson_developer_cloud import PersonalityInsightsV3
-from bokeh.plotting import figure, show, output_file,Bar
+from bokeh.plotting import figure, show, output_file
 import os
 import pandas as pd
 
